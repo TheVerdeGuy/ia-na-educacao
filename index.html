@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inteligência Artificial na Educação</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(-45deg, #1e3c72, #6a11cb, #2a5298, #2575fc);
+      background-size: 1000% 1000%;
+      animation: gradientBG 15s ease infinite;
+      color: white;
+      position: relative;
+      z-index: 0;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    section {
+      padding: 60px 0;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+    }
+
+    .card img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .download-btn {
+      margin-top: 15px;
+    }
+
+    canvas {
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .pesquisador-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .pesquisador-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow" style="background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(6px);">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">IA na Educação</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#sobre">O que é IA</a></li>
+          <li class="nav-item"><a class="nav-link" href="#mercado">Mercado</a></li>
+          <li class="nav-item"><a class="nav-link" href="#uso">Uso</a></li>
+          <li class="nav-item"><a class="nav-link" href="#beneficios">Benefícios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#panorama">Panorama</a></li>
+          <li class="nav-item"><a class="nav-link" href="#grafico">Gráfico</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pesquisadores">Pesquisadores</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div style="height: 80px;"></div>
+
+  <header class="text-center py-5 position-relative">
+    <div style="background-color: rgba(0, 0, 0, 0.5); padding: 30px; border-radius: 10px; display: inline-block;">
+      <h1 class="display-4 fw-bold text-white m-0">Inteligência Artificial na Educação</h1>
+      <p class="lead text-white m-0">Transformando o futuro do aprendizado com tecnologia</p>
+    </div>
+  </header>
+
+  <section id="sobre" class="container">
+    <h2 class="text-center mb-4">O que é IA na Educação?</h2>
+    <p class="text-center">
+      A inteligência artificial pode ser utilizada de inúmeras maneiras na educação, nosso projeto é mostrar como ela pode ser usada como forma de auxílio para o aprendizado dos alunos.
+    </p>
+    <p class="text-center">
+      Essa tecnologia ajuda alunos e professores a tornarem o processo de ensino-aprendizagem mais eficiente, dinâmico e adaptado às necessidades individuais.
+    </p>
+  </section>
+
+  <section id="mercado" class="container my-5">
+    <h2 class="text-center mb-4">Tamanho do mercado de IA na educação</h2>
+    <p class="text-center">
+      O mercado global de IA na educação deve crescer de cerca de <strong>US$ 5,47 bilhões em 2024</strong> para aproximadamente <strong>US$ 7,52 bilhões em 2025</strong>, com taxa de crescimento significativa.
+      (<a href="https://www.thebusinessresearchcompany.com/report/ai-in-education-global-market-report" target="_blank" class="text-white text-decoration-underline">thebusinessresearchcompany.com</a>)
+    </p>
+    <p class="text-center">
+      No segmento K–12 (educação básica), o mercado passou de US$ 0,37 bilhões em 2024 para previsão de mais de <strong>US$ 5,24 bilhões</strong> até 2032.
+      (<a href="https://www.globenewswire.com/news-release/2025/09/04/3144610/0/en/AI-in-K-12-Education-Market-Size-to-Reach-USD-5-24-Billion-by-2032-Driven-by-AI-Solutions-Cloud-Machine-Learning-and-GenAI.html" target="_blank" class="text-white text-decoration-underline">globenewswire.com</a>)
+    </p>
+  </section>
+
+  <section id="uso" class="container my-5">
+    <h2 class="text-center mb-4">Como se usa IA no ensino e aprendizagem</h2>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item bg-transparent text-white">Cerca de <strong>54% dos estudantes</strong> usam IA de forma semanal ou mais. (<a href="https://www.demandsage.com/ai-in-education-statistics/" target="_blank" class="text-white text-decoration-underline">demandSage</a>)</li>
+      <li class="list-group-item bg-transparent text-white">Relatório Microsoft (2025): estudantes usam IA para “brainstorming” (37 %), resumir informações (33 %) e receber feedback (32 %). (<a href="https://www.microsoft.com/en-us/microsoft-365/blog/2025/02/11/new-microsoft-education-study-shows-ai-is-boosting-student-engagement-learning-and-assessment/" target="_blank" class="text-white text-decoration-underline">Microsoft</a>)</li>
+      <li class="list-group-item bg-transparent text-white">Entre professores, 31 % usam IA para criar aulas; 24 % para simplificar tópicos complexos; 23 % para diferenciar instrução. (<a href="https://www.edsurge.com/news/2025/02/11/teachers-are-using-ai-in-classrooms-according-to-new-report" target="_blank" class="text-white text-decoration-underline">EdSurge</a>)</li>
+    </ul>
+  </section>
+
+  <section id="beneficios" class="container my-5">
+    <h2 class="text-center mb-4">Benefícios e desafios da IA na educação</h2>
+    <p class="text-center">
+      Estudos apontam que ferramentas de IA conseguem gerar um efeito positivo no desempenho dos estudantes (por exemplo, “effect size” g ≈ 0,867) em meta-análise recente.
+      (<a href="https://techkv.com/ai-in-education-statistics/" target="_blank" class="text-white text-decoration-underline">techkv.com</a>)
+    </p>
+    <p class="text-center">
+      Contudo, a adoção exige formação docente, políticas claras e atenção à ética e ao viés algorítmico.
+      (<a href="https://arxiv.org/abs/2504.19673" target="_blank" class="text-white text-decoration-underline">arxiv.org</a>)
+    </p>
+  </section>
+
+  <section id="panorama" class="container my-5">
+    <h2 class="text-center mb-4">Panorama global (e implicações para o Brasil)</h2>
+    <p class="text-center">
+      Em 2025, estima-se que a IA represente aproximadamente <strong>15-20%</strong> do mercado total de EdTech (tecnologia educacional) e poderá atingir 30-35% até 2030.
+      (<a href="https://quickmarketpitch.com/blogs/news/education-ai-how-big" target="_blank" class="text-white text-decoration-underline">quickmarketpitch.com</a>)
+    </p>
+    <p class="text-center">
+      No Brasil, a adoção ainda é inicial, mas cresce rapidamente com iniciativas em universidades e escolas públicas que exploram IA para personalizar o ensino e apoiar professores.
+    </p>
+  </section>
+
+  <section id="grafico" class="container text-center">
+    <h2 class="mb-4">Uso de IA na Educação — Comparativo</h2>
+    <p class="mb-4">
+      Percentual de adoção/uso por recorte (institucional, docentes, estudantes e políticas no ensino superior).
+    </p>
+
+    <canvas id="graficoIA" aria-label="Gráfico comparativo de uso de IA" role="img" style="max-height: 400px;"></canvas>
+
+    <script>
+      const labelsIA = [
+        'Reino Unido (K-12/FE)',
+        'EUA (K-12, docentes)',
+        'Brasil (Ensino médio, alunos)',
+        'Ensino Superior (política/orientação)'
+      ];
+
+      const usaIA = [31, 25, 70, 66];
+      const naoUsaIA = [69, 75, 30, 34];
+
+      const ctx = document.getElementById('graficoIA').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labelsIA,
+          datasets: [
+            {
+              label: 'Usa IA (%)',
+              data: usaIA,
+              backgroundColor: 'rgba(75, 192, 192, 0.7)',
+              borderColor: 'rgba(75, 192, 192, 1)',
+              borderWidth: 1,
+              borderRadius: 6
+            },
+            {
+              label: 'Não usa IA (%)',
+              data: naoUsaIA,
+              backgroundColor: 'rgba(255, 99, 132, 0.7)',
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderWidth: 1,
+              borderRadius: 6
+            }
+          ]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              labels: {
+                color: 'white',
+                font: { size: 14 }
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.x}%`
+              }
+            }
+          },
+          scales: {
+            x: {
+              beginAtZero: true,
+              max: 100,
+              ticks: { color: 'white', callback: (v) => v + '%' },
+              grid: { color: 'rgba(255,255,255,0.1)' }
+            },
+            y: {
+              ticks: { color: 'white' },
+              grid: { color: 'rgba(255,255,255,0.05)' }
+            }
+          }
+        }
+      });
+    </script>
+
+    <div class="mt-3" style="font-size: 0.9rem; opacity: 0.9;">
+      <em>
+        Notas: Reino Unido = implementação por escola; EUA = uso por docentes; Brasil = uso por estudantes do ensino médio; Ensino Superior = existência/produção de políticas de IA.<br>
+        Os percentuais representam recortes diferentes e não são diretamente comparáveis como “implantação escolar” em todos os casos.
+      </em>
+    </div>
+    
+  <section id="pesquisadores" class="container">
+    <h2 class="text-center mb-5">Pesquisadores e Autores sobre IA na Educação</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-3 h-100 position-relative pesquisador-card">
+          <h5 class="mb-2">Rose Luckin</h5>
+          <p class="mb-4">
+            Professora da UCL, defende o uso da IA para personalizar o ensino e ampliar o papel dos professores como mentores.
+          </p>
+          <a href="pesquisadores/luckin.html" target="_blank" rel="noopener" class="stretched-link"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 h-100 position-relative pesquisador-card">
+          <h5 class="mb-2">Neil Selwyn</h5>
+          <p class="mb-4">
+            Pesquisador australiano que analisa criticamente o impacto social da IA na educação e os desafios éticos envolvidos.
+          </p>
+          <a href="pesquisadores/selwyn.html" target="_blank" rel="noopener" class="stretched-link"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 h-100 position-relative pesquisador-card">
+          <h5 class="mb-2">António Moreira</h5>
+          <p class="mb-4">
+            Professor português que estuda a integração das tecnologias digitais e IA no processo de ensino-aprendizagem.
+          </p>
+          <a href="pesquisadores/moreira.html" target="_blank" rel="noopener" class="stretched-link"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center py-4 mt-5">
+    <p>&copy; 2025 Inteligência Artificial na Educação. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 100, density: { enable: true, value_area: 1200 } },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true, distance: 150, color: "#ffffff", opacity: 0.3, width: 1
+        },
+        move: { enable: true, speed: 2 }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" },
+          resize: true
+        },
+        modes: { grab: { distance: 140, line_linked: { opacity: 0.5 } }, push: { particles_nb: 4 } }
+      },
+      retina_detect: true
+    });
+  </script>
+</body>
+</html>
